@@ -16,11 +16,14 @@ const getRequestTime = function() {
     return `${dateFormat}T${timeFormat}${timeOffset}`;
 }
 
+const getLogTime = getRequestTime;
+
 const formatLocaleDateString = function() {
     return new Date().toLocaleDateString().split('/').map(d => d.padStart(2, '0')).reverse().join('');
 }
 
 module.exports = {
     getRequestTime,
+    getLogTime,
     formatLocaleDateString
 }

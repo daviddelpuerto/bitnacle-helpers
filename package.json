@@ -1,6 +1,6 @@
 {
   "name": "bitnacle-helpers",
-  "version": "1.1.0-beta",
+  "version": "1.1.1-beta",
   "description": "Set of helpers for bitnacle loggers",
   "author": "David del Puerto Martín <ddelpuertomartin@gmail.com> (https://github.com/daviddelpuerto)",
   "main": "./index.js",
