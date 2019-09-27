@@ -32,14 +32,14 @@ describe('#getLogLevel()', function() {
         })).to.equal('INFO');
     });
 
-    it('should return null for statusCode lower than 100 and higher than 600', function() {
-        expect(levels.getLogLevel({
+    it('should throw if statusCode is lower than 100 and higher than 600', function() {
+        expect(() => levels.getLogLevel({
             statusCode: 99
-        })).to.be.null;
+        })).to.throw();
 
-        expect(levels.getLogLevel({
+        expect(() => levels.getLogLevel({
             statusCode: 600
-        })).to.be.null;
+        })).to.throw();
     });
 
     it('should throw if statusCode is not an integer', function() {
