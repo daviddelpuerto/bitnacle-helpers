@@ -10,7 +10,7 @@ const getLogLevel = function({ statusCode }) {
     } else if (normalizedStatusCode >= 100 && normalizedStatusCode < 400) {
         return 'INFO';
     } else {
-        return null;
+        throw new Error(`invalid statusCode ${statusCode}: it must be an integer between 100 and 599 both included`);
     }
 };
 
