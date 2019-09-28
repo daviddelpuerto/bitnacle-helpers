@@ -1,6 +1,9 @@
 module.exports = {
     
-    simple: ({ time, level, req, statusCode, extra, elapsedTime, message }) => {
+    simple: ({ time, level, req = {}, statusCode, extra = {}, elapsedTime, message }) => {
+        if (typeof req !== 'object') throw new Error('req must be an object');
+        if (typeof extra !== 'object') throw new Error('extra must be an object');
+
         const { method, endpoint, remoteAddress, id } = req;
         const messageObject = { time, level, method, endpoint, remoteAddress, id, statusCode, ...extra, elapsedTime, message };
         return Object.values(messageObject)
@@ -9,7 +12,10 @@ module.exports = {
             .join(' ');
     },
 
-    json: ({ time, level, req, statusCode, extra, elapsedTime, message }) => {
+    json: ({ time, level, req = {}, statusCode, extra = {}, elapsedTime, message }) => {
+        if (typeof req !== 'object') throw new Error('req must be an object');
+        if (typeof extra !== 'object') throw new Error('extra must be an object');
+        
         const { method, endpoint, remoteAddress, id } = req;
         return JSON.stringify({ time, level, method, endpoint, remoteAddress, id, statusCode, ...extra, elapsedTime, message });
     },
