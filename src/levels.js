@@ -21,5 +21,6 @@ const getLogLevel = function({ statusCode }) {
 };
 
 module.exports = {
+    levels,
     getLogLevel
 };
