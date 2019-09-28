@@ -8,6 +8,7 @@ try {
 
     importTest('timer', './timer');
     importTest('levels', './levels');
+    importTest('formats', './formats');
 
 } catch(err) {
     console.error(err);
