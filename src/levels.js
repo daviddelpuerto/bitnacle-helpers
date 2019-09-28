@@ -1,7 +1,8 @@
 const levels = {
     ERROR: 'ERROR',
     WARNING: 'WARNING',
-    INFO: 'INFO'
+    INFO: 'INFO',
+    DEBUG: 'DEBUG'
 };
 
 const getLogLevel = function({ statusCode }) {
