@@ -67,6 +67,6 @@ describe('#json()', function() {
 
 describe('#extended()', function() {
     it('should return the same object', function() {
-        expect(formats.extended(logMessageObject)).to.deep.equal(logMessageObject);
+        expect(formats.extended(logMessageObject)).to.deep.equal(JSON.stringify(logMessageObject));
     });
 });
