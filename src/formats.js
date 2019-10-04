@@ -20,6 +20,6 @@ module.exports = {
         return JSON.stringify({ time, level, method, endpoint, remoteAddress, id, statusCode, ...extra, elapsedTime, message });
     },
 
-    extended: (logMessageObject) => logMessageObject,
+    extended: (logMessageObject) => JSON.stringify(logMessageObject),
 
 }
