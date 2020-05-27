@@ -6,6 +6,7 @@ const formats = require('../../src/formats');
 const logMessageObject = {
     time: timer.getRequestTime(),
     level: 'INFO',
+    userAgent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36',
     req: {
         method: 'GET',
         endpoint: '/api/endpoint',
@@ -20,7 +21,8 @@ const logMessageObject = {
 describe('#simple()', function() {
     it('should return a string with the correct format', function() {
         const simpleFormatLogMessage = formats.simple(logMessageObject);
-        const simpleFormatLogMessageHasCorrectFormat = /\[\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}:\d{3}[+-]\d{4}\]\s\[[\w\s]*\]\s\[(GET|HEAD|POST|PUT|DELETE|CONNECT|OPTIONS|TRACE|PATCH)\]\s\[[\/\w*]*\]\s\[[a-zA-Z09:*]*\]\s\[[\w*-]*\]\s\[[1-5]\d{2}\]\s\[\d*\]\s\[[\w\s]*\]/.test(simpleFormatLogMessage);
+        console.log(simpleFormatLogMessage);
+        const simpleFormatLogMessageHasCorrectFormat = /\[\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}:\d{3}[+-]\d{4}\]\s\[[\w\s]*\]\s\[(GET|HEAD|POST|PUT|DELETE|CONNECT|OPTIONS|TRACE|PATCH)\]\s\[[\/\w*]*\]\s\[[a-zA-Z09:*]*\]\s\[(.*?)\]\s\[[\w*-]*\]\s\[[1-5]\d{2}\]\s\[\d*\]\s\[[\w\s]*\]/.test(simpleFormatLogMessage);
         expect(simpleFormatLogMessageHasCorrectFormat).to.be.true;
     });
 
