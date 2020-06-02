@@ -1,5 +1,4 @@
 const { expect } = require('chai');
-const { levels } = require('../../src/levels');
 const timer = require('../../src/timer');
 const formats = require('../../src/formats');
 
@@ -21,7 +20,6 @@ const logMessageObject = {
 describe('#simple()', function() {
     it('should return a string with the correct format', function() {
         const simpleFormatLogMessage = formats.simple(logMessageObject);
-        console.log(simpleFormatLogMessage);
         const simpleFormatLogMessageHasCorrectFormat = /\[\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}:\d{3}[+-]\d{4}\]\s\[[\w\s]*\]\s\[(GET|HEAD|POST|PUT|DELETE|CONNECT|OPTIONS|TRACE|PATCH)\]\s\[[\/\w*]*\]\s\[[a-zA-Z09:*]*\]\s\[(.*?)\]\s\[[\w*-]*\]\s\[[1-5]\d{2}\]\s\[\d*\]\s\[[\w\s]*\]/.test(simpleFormatLogMessage);
         expect(simpleFormatLogMessageHasCorrectFormat).to.be.true;
     });
