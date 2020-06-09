@@ -16,5 +16,7 @@ module.exports = {
     ecmaVersion: 11,
   },
   rules: {
+    'max-len': ['off'],
+    'no-underscore-dangle': ['off'],
   },
 };
