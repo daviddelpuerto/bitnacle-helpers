@@ -16,7 +16,7 @@
     "bitnacle-helpers"
   ],
   "scripts": {
-    "lint": "eslint ./src --fix",
+    "lint": "eslint ./src ./test --fix",
     "test": "nyc --reporter=html mocha"
   },
   "license": "MIT",
